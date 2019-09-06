@@ -1,0 +1,30 @@
+#container {
+	max-width: 800px;
+	margin: 0 auto;
+	
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+img {
+	width: 100%;
+}
+
+#title {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+#menu {
+	grid-column: 1 / 2;
+}
+
+#login {
+	grid-column: 3 / span 1;
+	grid-row: 1;
+}
+
+
+
+
+
