@@ -3,7 +3,8 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const message = document.getElementById("login-message");
 
-loginButton.onclick = function(event) {
+
+loginButton.onclick = function(event) {	
 	const promise = firebase.auth().signInWithEmailAndPassword(emailInput.value, passwordInput.value);
 	promise.catch(function(error) {
 		message.textContent = error.message;
@@ -29,14 +30,3 @@ const logoutButton = document.getElementById("logout-button");
 logoutButton.onclick = function() {
 	firebase.auth().signOut();
 };
-
-
-
-
-
-
-
-
-
-
-
