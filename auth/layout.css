@@ -1,5 +1,6 @@
 #container {
-	width: 960px;
+	max-width: 960px;
+	width: 100%;
 	margin: 0 auto;
 	
 	display: grid;
@@ -12,8 +13,8 @@
 }
 
 #menu {
-	grid-column: 1 / span 1;
-	grid-row: 3;
+	grid-column: 1 / span 2;
+	grid-row: 1;
 }
 
 #login {
