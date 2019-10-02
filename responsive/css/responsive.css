@@ -1,8 +1,9 @@
-#title { background: lightgray; }
-#main { background: pink; }
-#menu { background: lightgreen; }
+/*#title { background: lightgray; }*/
+/*#main { background: pink; }*/
+/*#menu { background: lightgreen; }*/
 
-@media (max-width: 400px) {
+/* mobile */
+@media (max-width: 414px) {
 	#container {
 		grid-template-columns: 100%;
 	}
@@ -49,7 +50,7 @@
 }
 
 /* tablet */
-@media (min-width: 401px) and (max-width: 800px) {
+@media (min-width: 415px) and (max-width: 800px) {
 
 	#menu {
 		grid-column: 1;
