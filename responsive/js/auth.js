@@ -12,7 +12,6 @@ loginButton.onclick = function(event) {
 
 
 const displayName = document.getElementById("user-name");
-
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 		document.body.classList.add('auth');
