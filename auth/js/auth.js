@@ -10,7 +10,6 @@ loginButton.onclick = function(event) {
 	});
 };
 
-
 const displayName = document.getElementById("user-name");
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -28,5 +27,4 @@ const logoutButton = document.getElementById("logout-button");
 logoutButton.onclick = function() {
 	firebase.auth().signOut();
 };
-
 
