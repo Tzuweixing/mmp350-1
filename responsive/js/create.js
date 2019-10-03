@@ -9,7 +9,13 @@ createButton.onclick = function() {
 	promise.catch(function(error) {
 		errorMessage.textContent = error.message;
 	});
-	promise.then(function() {
-		location.href = "index.html";
+	promise.then(function(response) {
+		response.user.updateProfile({displayName: userInput.value})
+			.then(function() {
+				location.href = "index.html";
+			})
+			.catch(function(error) {
+				console.log(error);				
+			})
 	});
 };
