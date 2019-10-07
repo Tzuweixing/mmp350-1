@@ -12,10 +12,19 @@ loginButton.onclick = function(event) {
 
 /* auth state */
 const displayName = document.getElementById("user-name");
+const profileButton = document.getElementById("profile-button");
+
 firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
 		document.body.classList.add('auth');
-		displayName.textContent = "Welcome, " + user.displayName;
+		const userRef = firebase.database().ref('users').child(user.uid);
+		userRef.once('value', function(snapshot) {
+			const userInfo = snapshot.val();
+			displayName.textContent = "Welcome, " + userInfo.userName;
+			profileButton.onclick = function() {
+				location.href = "profile.html?uid=" + user.uid;
+			};
+		});
 	} else {
 		document.body.classList.remove('auth');
 		displayName.textContent = "";

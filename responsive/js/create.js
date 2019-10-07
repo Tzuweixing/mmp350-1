@@ -10,12 +10,17 @@ createButton.onclick = function() {
 		errorMessage.textContent = error.message;
 	});
 	promise.then(function(response) {
-		response.user.updateProfile({displayName: userInput.value})
-			.then(function() {
-				location.href = "index.html";
-			})
-			.catch(function(error) {
-				console.log(error);				
-			})
+		createUser(response.user);
 	});
 };
+
+function createUser(user) {
+	const db = firebase.database();
+	const ref = db.ref('users').child(user.uid);
+	const promise = ref.update({
+		displayName: userInput.value
+	});
+	promise.then(function() {
+		location.href = 'index.html';
+	});
+}
