@@ -31,4 +31,5 @@ function createUser(user) {
 				console.log(error);				
 			})
 	});
+
 }

@@ -5,6 +5,7 @@ publishButton.addEventListener('click', publishPost);
 
 function publishPost() {
 
+
 	const dbRef = firebase.database().ref('posts');
 	const user = firebase.auth().currentUser;
 
