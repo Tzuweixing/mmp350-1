@@ -1,0 +1,46 @@
+/* color values & default colors */
+
+/* color sceme 1 purple and yellow */
+:root {
+	--main-color: #6B6AFF;
+	--complement: #FFDB3B;
+	--accent-one: #3939B3;
+	--accent-two: #8585FF;
+	--accent-three: #B39925;
+}
+
+/* color scheme 2 orange and blue */
+:root {
+	--main-color: #FF9439;
+	--complement: #38DCFF;
+	--accent-one: #B35F15;
+	--accent-two: #FFA352;
+	--accent-three: #0494B3;
+
+	--text: black;
+}
+
+
+* {
+	color: var(--main-color);
+}
+
+a { 
+	color: var(--complement);
+}
+
+p {
+	color: var(--text);
+}
+
+button {
+	background-color: var(--accent-one);
+}
+
+#menu, #login {
+	background-color: var(--accent-three);
+}
+
+#social {
+	background-color: var(--accent-one);
+}
