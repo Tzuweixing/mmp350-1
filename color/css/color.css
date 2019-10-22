@@ -1,0 +1,51 @@
+/*
+	complementary color scheme (blue and orange)
+	main #1786FF
+	blue accents #3094FF #085AB3
+	orange accents #B37100 #FFAA17
+*/
+
+:root {
+	--main-color: #1786FF;
+	--complement: #FFAA17;
+	--accent-one: #3094FF;
+	--accent-two: #085AB3;
+}
+	
+/* 
+	color scheme 2
+	monochromatic purple
+*/
+	
+:root {
+	--main-color: #B515FF;
+	--complement: #CD61FF;
+	--accent-one: #5A0A80;
+	--accent-two: #9110CC;
+		
+	--text-color: var(--accent-two); /* black */
+}
+	
+* {
+	color: var(--text-color);	
+}
+
+#title {
+	color: var(--main-color);
+}
+
+#menu, #login {
+	background-color: var(--accent-one);
+}
+
+button {
+	background-color: var(--complement);
+}
+
+a {
+	color: var(--complement);
+}
+
+#social {
+	background-color: var(--complement);
+}
