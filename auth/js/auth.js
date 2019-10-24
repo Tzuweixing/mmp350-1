@@ -12,10 +12,12 @@ loginButton.onclick = function(event) {
 };
 
 /* auth state */
+
+	
+
 const displayName = document.getElementById("user-name");
 
 firebase.auth().onAuthStateChanged(function(user) {
-	
 	if (user) {
 		document.body.classList.add('auth');
 		displayName.textContent = "Welcome, " + user.displayName;
