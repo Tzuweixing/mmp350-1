@@ -81,8 +81,8 @@
 /* monochromatic */
 :root {
 	--main-hue: 240;
-	--saturation: 25;
-	--lightness: 70;
+	--saturation: 10;
+	--lightness: 90;
 	
 	--main-color: hsl(var(--main-hue), 50%, 50%);
 		
@@ -93,8 +93,8 @@
 	--accent-two: hsl(var(--main-hue), 50%, var(--lit-percent));
 		
 	--complement: var(--accent-one);
-	--text-color: var(--main-color);
-	--link-color: var(--accent-one);
+	--text-color: black;
+	--link-color: var(--accent-two);
 }
 
 	
@@ -111,7 +111,7 @@
 }
 
 button {
-	background-color: var(--complement);
+	background-color: var(--accent-two);
 }
 
 a {

@@ -1,0 +1,9 @@
+textarea#post-text {
+	margin-top: 1em;
+	display: block;
+	width: 100%;
+	padding:0.5em;
+	margin: 2em 0;
+	border-radius: 0.5em;
+	resize: none;
+}

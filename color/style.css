@@ -7,8 +7,10 @@
 @import "css/menu.css";
 @import "css/create.css";
 @import "css/profile.css";
+@import "css/publish.css";
 
 /* responsive */
 @import "css/responsive.css";
 
 img { width: 100%; }
+* { box-sizing: border-box; }
