@@ -16,10 +16,15 @@
 		grid-column: 1;
 		grid-row: 2;
 	}
+
 	
 	#main {
 		grid-column: 1;
 		grid-row: 3;
+	}
+
+	#login, #user-info {
+		grid-row: 4;
 	}
 	
 	/* menu flex box */
