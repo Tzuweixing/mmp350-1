@@ -22,6 +22,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		const userRef = firebase.database().ref('users').child(user.uid);
 		userRef.on('value', function(snapshot) {
 			const userInfo = snapshot.val();
+			console.log(displayName, userInfo);
 			displayName.textContent = "Welcome, " + userInfo.displayName;
 		});
 		

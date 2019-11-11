@@ -18,13 +18,21 @@ function createElement(_class, text) {
 function createPost(data) {
 	const post = createElement('post');
 	const text = createElement('text', data.text);
-	const author = createElement('author', 'by ' + users[data.uid]);
+	const author = createElement('author', 'by ' + users[data.uid].displayName);
 	
 	var d = new Date(data.date);
 	const date = createElement('date',(d.getMonth() + 1) + "." +  d.getDate() + "." + d.getFullYear());
 	
 //	posts.appendChild(post);
 	posts.insertBefore(post, posts.firstElementChild);
+
+	if (users[data.uid].imageURL) {
+		const userImage = new Image();
+		userImage.src = users[data.uid].imageURL;
+		userImage.classList.add('user-image');
+		post.appendChild(userImage);
+	}
+	
 	
 	post.appendChild(text);
 	post.appendChild(author);
@@ -39,7 +47,7 @@ function createPost(data) {
 let userCount = 0;
 const users = {};
 firebase.database().ref('users').on('child_added', function(snapshot) {
-	users[snapshot.key] = snapshot.val().displayName;
+	users[snapshot.key] = snapshot.val();
 	userCount += 1;
 });
 
