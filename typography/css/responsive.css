@@ -1,9 +1,16 @@
-/*#title { background: lightgray; }*/
-/*#main { background: pink; }*/
-/*#menu { background: lightgreen; }*/
-
 /* mobile */
 @media (max-width: 414px) {
+	
+	body {
+		font-size: 14px;
+		line-height: 1.2;
+	}
+	
+	.post .text {
+		line-height: 1.5;
+		font-size: 1.25em;
+	}
+	
 	#container {
 		grid-template-columns: 100%;
 	}
@@ -19,7 +26,19 @@
 	
 	#main {
 		grid-column: 1;
+		grid-row: 4;
+	}
+	
+	#login {
 		grid-row: 3;
+	}
+	
+	.auth #main {
+		grid-row: 3;	
+	}
+	
+	#user-info {
+		grid-row: 4;
 	}
 	
 	/* menu flex box */
@@ -27,7 +46,7 @@
 		justify-content: space-evenly;	
 	}
 	#menu a {
-		font-size: 2em;	
+		font-size: 1.5em;	
 	}
 	#menu li {
 		flex-grow: initial;
