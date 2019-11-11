@@ -1,10 +1,13 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7bd3b319b6aa07da37498bba48e0ed190ba051f
 const publishButton = document.getElementById('publish');
 const postText = document.getElementById('post-text');
 
 publishButton.addEventListener('click', publishPost);
 
 function publishPost() {
-
 
 	const dbRef = firebase.database().ref('posts');
 	const user = firebase.auth().currentUser;
@@ -25,5 +28,3 @@ function publishPost() {
 			console.log(error.message);
 		});
 }
-
-

@@ -22,7 +22,6 @@ function createUser(user) {
 	});
 	promise.then(function() {
 		location.href = 'index.html';
-
 		response.user.updateProfile({displayName: userInput.value})
 			.then(function() {
 				location.href = "index.html";
@@ -31,5 +30,4 @@ function createUser(user) {
 				console.log(error);				
 			})
 	});
-
 }
