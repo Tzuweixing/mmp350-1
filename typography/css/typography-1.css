@@ -6,11 +6,20 @@
 }
 	
 body {
-	font-family: var(--display-font);	
+	font-family: var(--display-font);
+	font-size: 2vw;
 }
 	
 a {
 	font-family: var(--link-font);
+}
+	
+#title h1 {
+	font-size: 4vw;	
+}
+	
+#social {
+	font-size: 5vh;	
 }
 	
 .post {
