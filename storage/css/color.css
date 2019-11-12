@@ -1,0 +1,42 @@
+/* analogous color scheme */
+:root {
+	--main-hue: 240;
+	--offset: 30;
+
+	--main-color: hsl(var(--main-hue), 50%, 50%);
+		
+	--accent-one-hue: calc(var(--main-hue) - var(--offset));
+	--accent-two-hue: calc(var(--main-hue) + var(--offset));
+	--accent-one: hsl(var(--accent-one-hue), 50%, 50%);
+	--accent-two: hsl(var(--accent-two-hue), 50%, 50%);
+	
+	--complement: var(--accent-two);
+	--button-dark: hsl(var(--accent-one-hue), 60%, 25%);
+	
+	--link-color: var(--main-color);
+}
+	
+	
+* {
+	color: var(--text-color);
+}
+
+#title h1 {
+	color: var(--main-color);
+}
+
+#menu, #login {
+	background-color: var(--accent-one);
+}
+
+button {
+	background-color: var(--complement);
+}
+
+a {
+	color: var(--link-color);
+}
+
+#social {
+	background-color: var(--complement);
+}
