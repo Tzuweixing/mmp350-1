@@ -12,6 +12,11 @@ userRef.on('value', function(snapshot) {
 	if (userInfo.bio) {
 		bioInput.value = userInfo.bio;
 	}
+	
+	if (userInfo.imageURL) {
+		document.getElementById('profile-image').src = userInfo.imageURL;
+		document.getElementById('add-image').style.display = 'none';
+	}
 });
 
 updateButton.onclick = function() {
@@ -33,7 +38,11 @@ imageButton.addEventListener('click', function() {
 		const promise = ref.put(file);
 		
 		promise.then(function(image) {
-			console.log(image.ref.getDownloadURL());
+			return image.ref.getDownloadURL();
+		}).then(function(url) {
+			userRef.update({ imageURL: url });
+			document.getElementById('profile-image').src = url;
+			document.getElementById('add-image').style.display = 'none';
 		});
 	}
 	
