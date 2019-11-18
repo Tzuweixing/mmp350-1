@@ -17,6 +17,14 @@ userRef.on('value', function(snapshot) {
 		document.getElementById('profile-image').src = userInfo.imageURL;
 		document.getElementById('add-image').style.display = 'none';
 	}
+
+	const posts = document.getElementById('posts');
+	const postRef = firebase.database().ref('posts').orderByChild('uid').equalTo(uid);
+	
+	postRef.on('child_added', function(snapshot) {
+		createPost(snapshot.val(), userInfo);	   
+	});
+
 });
 
 updateButton.onclick = function() {
@@ -45,8 +53,17 @@ imageButton.addEventListener('click', function() {
 			document.getElementById('add-image').style.display = 'none';
 		});
 	}
-	
 });
+
+/* check auth */
+firebase.auth().onAuthStateChanged(function(user) {
+	if (user.uid == uid) {
+		profileName.readOnly = false;
+		bioInput.readOnly = false;
+		document.body.classList.add('is-user');
+	}
+});
+
 
 
 

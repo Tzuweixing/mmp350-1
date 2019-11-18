@@ -1,3 +1,4 @@
+/* index/global */
 #user-info {
 	display: none;
 }
@@ -18,5 +19,10 @@
 	display: block;
 }
 
+#edit-profile {
+	display: none;
+}
 
-
+.auth #edit-profile {
+	display: block;
+}
