@@ -5,14 +5,18 @@ function createElement(_class, text) {
 	return element;
 }
 
-function createPost(data, user) {
+function createPost(data, user, postId) {
 	const post = createElement('post');
 	const text = createElement('text', data.text);
 	const author = createElement('author', 'by ');
 	const authorLink = document.createElement('a');
-	authorLink.href = 'profile.html?uid=' + data.uid;
+	authorLink.href = 'user.html?uid=' + data.uid;
 	authorLink.textContent = user.displayName;
 	author.appendChild(authorLink);
+
+	const postLink = document.createElement('a');
+	postLink.href = 'post.html?id=' + postId;
+	postLink.textContent = "Permalink";
 	
 	var d = new Date(data.date);
 	const date = createElement('date',(d.getMonth() + 1) + "." +  d.getDate() + "." + d.getFullYear());
@@ -33,6 +37,7 @@ function createPost(data, user) {
 	post.appendChild(text);
 	post.appendChild(author);
 	post.appendChild(date);
+	post.appendChild(postLink);
 }
 
 

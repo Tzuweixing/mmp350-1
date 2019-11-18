@@ -7,12 +7,3 @@
 #update-profile {
 	display: none;
 }
-
-.is-user #add-image,
-.is-user #update-profile {
-	display: block;
-}
-
-.post .profile-image {
-	display: none;
-}
