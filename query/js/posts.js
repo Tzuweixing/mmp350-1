@@ -33,6 +33,14 @@ function createPost(postData, userData, postId) {
 	const postLink = document.createElement('a');
 	postLink.href = 'post.html?id=' + postId;
 	postLink.textContent = "Permalink";
+
+	if (postData.tags) {
+		let textHTML = postData.text;
+		for (const tag in postData.tags) {
+			textHTML = textHTML.replace('#' + tag, '<a href="tag.html?tag=' + tag + '">#' + tag + '</a>');
+		}
+		text.innerHTML = textHTML;
+	}
 	
 	post.appendChild(img);
 	post.appendChild(text);

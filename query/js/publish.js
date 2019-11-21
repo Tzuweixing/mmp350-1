@@ -12,10 +12,21 @@ const ref = firebase.database().ref('posts');
 
 function publishPost() {
 	const post = {}; // empty object
+
+	const tags = postText.value.match(/#[a-z0-9_]+/gi);
+	if (tags) {
+		post.tags = {};
+		for (let i = 0; i < tags.length; i++) {
+			const tag = tags[i].replace('#', '');
+			post.tags[tag] = true;
+		}
+	}
+
 	post.text = postText.value;
 	post.uid = firebase.auth().currentUser.uid;
 	post.date = Date.now();
 	postText.value = "";
+
 	
 	// push post to database
 	ref.push(post);
