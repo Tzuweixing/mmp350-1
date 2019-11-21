@@ -2,7 +2,15 @@
 	display: none;
 }
 
+#profile {
+	display: none;
+}
+
 .auth #user-info {
+	display: block;
+}
+
+.auth #profile {
 	display: block;
 }
 
