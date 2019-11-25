@@ -37,7 +37,10 @@ function createPost(postData, userData, postId) {
 	if (postData.tags) {
 		let textHTML = postData.text;
 		for (const tag in postData.tags) {
-			textHTML = textHTML.replace('#' + tag, '<a href="tag.html?tag=' + tag + '">#' + tag + '</a>');
+			// textHTML = textHTML.replace('#' + tag, '<a href="tag.html?tag=' + tag + '">#' + tag + '</a>');
+
+			const re = new RegExp('#'+tag, "g");
+			textHTML = textHTML.replace(re, '<a href="tag.html?tag=' + tag + '">#' + tag + '</a>');
 		}
 		text.innerHTML = textHTML;
 	}

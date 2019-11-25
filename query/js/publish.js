@@ -13,6 +13,7 @@ const ref = firebase.database().ref('posts');
 function publishPost() {
 	const post = {}; // empty object
 
+	// match any string starting with # ending with white space
 	const tags = postText.value.match(/#[a-z0-9_]+/gi);
 	if (tags) {
 		post.tags = {};
