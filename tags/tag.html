@@ -38,8 +38,9 @@
 		<div id="menu">
 			<ul>
 				<li><a href="index.html">Home</a></li>
-<!--				<li><a href="profile.html">Profile</a></li>-->
-				<li><a href="users.html">Users</a></li>
+				<li><a href="profile">Profile</a></li>
+				<li><a href="users">Users</a></li>
+				<li><a href="support">Support</a></li>
 			</ul>
 		</div>
 		
@@ -57,10 +58,7 @@
 		</div>
 		
 		<div id="main">
-			<div id="write-post">
-				<textarea id="post-text" placeholder="Compose a new post"></textarea>
-				<button id="publish">Publish</button>
-			</div>
+			<h2>Tagged #<span id="tag"></span></h2>
 			<div id="posts"></div>
 		</div>
 		
@@ -81,9 +79,8 @@
 	</div>
 	
 	<script src="js/auth.js"></script>
-	<script src="js/publish.js"></script>
 	<script src="js/posts.js"></script>
-	<script src="js/index.js"></script>
+	<script src="js/tag.js"></script>
 	
 </body>
 </html>
